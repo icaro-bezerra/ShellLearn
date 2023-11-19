@@ -5,6 +5,22 @@ sudo apt update && apt upgrade -y && install zsh libfuse2 -y;
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/' ~/.zshrc
 
+echo 'alias dps="docker ps -a"' >> ~/.zshrc
+echo 'alias dpon="docker ps"' >> ~/.zshrc
+echo 'alias update="sudo apt update"' >> ~/.zshrc
+echo 'alias upgrade="sudo apt upgrade -y"' >> ~/.zshrc
+echo 'alias cls="clear"' >> ~/.zshrc
+echo 'alias gpush="/home/icaro/Documents/code/shellScript/gpush.sh"' >> ~/.zshrc
+echo 'alias deuruim="killall -3 gnome-shell"' >> ~/.zshrc
+echo 'alias gacp="/home/icaro/Documents/code/shellScript/gacp.sh"' >> ~/.zshrc
+echo 'alias dcon="docker compose up"' >> ~/.zshrc
+echo 'alias dcof="docker compose down"' >> ~/.zshrc
+echo 'alias drmi="docker container prune"' >> ~/.zshrc
+echo 'alias ..="cd .."' >> ~/.zshrc
+echo 'alias ...="cd ../.."' >> ~/.zshrc
+echo 'alias ....="cd ../../.."'
+echo 'alias updrade="/home/icaro/Documents/code/shellScript/updrade.sh"' >> ~/.zshrc
+
 echo "Now your dev tools"
 sudo apt install tilix -y
 
