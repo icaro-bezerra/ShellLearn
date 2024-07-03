@@ -21,11 +21,16 @@ echo 'alias ...="cd ../.."' >> ~/.zshrc
 echo 'alias ....="cd ../../.."'
 echo 'alias updrade="/home/icaro/Documents/code/shellScript/updrade.sh"' >> ~/.zshrc
 
+mkdir /home/icaro/Documents/code
+mkdir /home/icaro/Documents/code/shellScript
+wget https://raw.githubusercontent.com/icaro-bezerra/ShellLearn/main/gacp.sh -P /home/icaro/Documents/code/shellScript
+wget https://github.com/icaro-bezerra/ShellLearn/blob/main/gpush.sh -P /home/icaro/Documents/code/shellScript
+wget https://github.com/icaro-bezerra/ShellLearn/blob/main/updrade.sh -P /home/icaro/Documents/code/shellScript
 echo "Now your dev tools"
 sudo apt install tilix -y
 
 wget "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
-FILENOW=$(find ./ -type f -name 'code*.deb')
+FILENOW=$(find ./ -type f -name 'code*.deb' | head -n 1)
 sudo dpkg -i "$FILENOW"
 rm  "$FILENOW"
 sudo apt install docker.io  -y
@@ -43,5 +48,12 @@ sudo apt update
 
 sudo apt install brave-browser -y
 
-echo "I've installed only your needs to dev and work sir, take care of your machine"
 
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
+
+echo '. "$HOME/.asdf/asdf.sh"' >> ~/.zshrc
+
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+
+asdf install nodejs latest
+echo "I've installed only your needs to dev and work sir, take care of your machine"
